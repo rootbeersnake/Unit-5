@@ -1,4 +1,4 @@
-public class Num{
+public class Num implements Comparable{
   int val;
 
   public Num(int number){
@@ -9,7 +9,7 @@ public class Num{
     return val;
   }
 
-  public void valChange(int numc){
+  public void setValue(int numc){
     val = numc;
   }
 
@@ -23,6 +23,11 @@ public class Num{
     }else{
       return false;
     }
+  }
+
+  public int compareTo(Object other){
+    Num otherNum = (Num) other;
+    return this.getValue()
   }
 
 
