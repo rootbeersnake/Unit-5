@@ -35,8 +35,13 @@ public class LibraryTester{
     System.out.println("");
     System.out.println(myLibrary.toString());
 
+    int loc =  myLibrary.findTitle("song");
+    System.out.println(myLibrary.getAlbum(loc));
 
+    System.out.println("");
 
+    loc = myLibrary.findArtist("guy");
+    System.out.println(myLibrary.getAlbum(loc));
 
   }
 }

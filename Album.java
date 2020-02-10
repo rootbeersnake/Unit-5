@@ -19,8 +19,13 @@ public class Album{
     return result;
   }
 
+  public String getTitle(){
+    return title;
+  }
 
-
+  public String getArtist(){
+    return artist;
+  }
 
 
 }
