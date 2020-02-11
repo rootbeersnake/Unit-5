@@ -62,10 +62,75 @@ public class Library{
 
     public void selectionSort(){
       int min;
-      int temp;
+      Album temp;
 
-      for(int i = 0; i < library.length; i++){
+      for(int i = 0; i < library.length - 1 ; i++){
+        min = i;
+        for(int scan = i + 1; scan < library.length; scan++){
+          if(library[i] != null && library[scan] != null){
+            if(library[scan].getTitle().compareTo(library[min].getTitle()) < 0){
+              min = scan;
+            }
+          }
 
+          temp = library[min];
+          library[min] = library[i];
+          library[i] = temp;
+        }
+      }
+    }
+
+    public void insertionSort(){
+      for(int i = 1; i < library.length; i++){
+        Album key = library[i];
+        int position = i;
+        if(library[position - 1] != null && key != null){
+          while(position > 0 && library[position - 1].getArtist().compareTo(key.getArtist()) > 0){
+            library[position] = library[position - 1];
+            position--;
+          }
+          library[position] = key;
+        }
+      }
+    }
+
+    public Album binarySearchArtist(String artist){
+      int low = 0;
+      int high = library.length - 1;
+      int middle = (low + high)/2;
+
+      while(library[middle].getArtist().compareTo(artist) != 0){
+        if(artist.compareTo(library[middle].getArtist()) < 0){
+          high = middle -1;
+        }else{
+          low = middle -1;
+        }
+        middle = (low + high)/2;
+      }
+      if(library[middle].getArtist().compareTo(artist) == 0){
+        return library[middle];
+      }else{
+        return null;
+      }
+    }
+
+    public Album binarySearchTitle(String title){
+      int low = 0;
+      int high = library.length - 1;
+      int middle = (low + high)/2;
+
+      while(library[middle].getTitle().compareTo(title) != 0){
+        if(title.compareTo(library[middle].getTitle()) < 0){
+          high = middle -1;
+        }else{
+          low = middle -1;
+        }
+        middle = (low + high)/2;
+      }
+      if(library[middle].getTitle().compareTo(title) == 0){
+        return library[middle];
+      }else{
+        return null;
       }
     }
 
