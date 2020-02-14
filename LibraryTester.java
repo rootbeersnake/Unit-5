@@ -55,8 +55,6 @@ public class LibraryTester{
     System.out.println("did binary search artist");
     System.out.println(myLibrary.binarySearchArtist("guys"));
 
-    System.out.println("did binary search title");
-    System.out.println(myLibrary.binarySearchTitle("b"));
 
 
   }

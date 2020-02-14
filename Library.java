@@ -15,6 +15,12 @@ public class Library{
       return false;
     }
 
+
+    public void doubleSize(Library[] library){
+      int length = library.length;
+      Album[] newLibrary = new Album[length * 2];
+    }
+
     public boolean remove(int index){
       if(library[index] != null){
         library[index] = null;
